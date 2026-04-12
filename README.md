@@ -73,7 +73,6 @@ print("✅ Conversion complete!")
 ```
 
 ## 📊 Dataset Fields
-## 📊 Dataset Fields
 
 The CSV file contains the following fields:
 
@@ -91,7 +90,7 @@ The CSV file contains the following fields:
 | `employee_status` | Employment status (REGULAR, etc.) | Text |
 | `employee_type` | Current/Former employee with tenure | Text |
 | `company_name` | Name of the company being reviewed | Text |
-| `summary` | Review title/summary | Text |
+| `summary` | Review title/summary | Text |k
 | `review_pros` | Positive aspects mentioned | Text |
 | `review_cons` | Negative aspects mentioned | Text |
 | `review_advice` | Advice given to the company | Text |
@@ -105,4 +104,4 @@ The CSV file contains the following fields:
 | `flags_ceo_approval` | Whether employee approves of CEO | Text |
 | `flags_recommend_frend` | Whether employee would recommend to friend | Text |
 | `employee_location` | Employee's location | Text |
-| `employee_job_title` | Employee's job title | Text |
+| `employee_job_title` | Employee's job title | Text |k
