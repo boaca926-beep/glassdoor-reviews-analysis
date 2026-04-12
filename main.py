@@ -1,7 +1,4 @@
+from langchain_ollama.llms import OllamaLLM 
+from langchain_core.prompts import ChatPromptTemplate
 
-def main():
-    print("Hello from job-agent!")
 
-
-if __name__ == "__main__":
-    main()
