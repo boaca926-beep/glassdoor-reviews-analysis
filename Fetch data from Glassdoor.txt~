@@ -1,0 +1,19 @@
+Fetch data from Glassdoor
+
+Step 1: Navigate to the GitHub Repository
+
+    Open your web browser
+
+    Go to: https://github.com/luminati-io/Glassdoor-dataset-samples
+
+    This is the official repository for Bright Data's free dataset samples 
+    
+Step 2: Locate the Dataset File
+
+On the repository page, you'll see a file listing. Look for:
+
+glassdoor-companies-reviews.csv
+
+This is the sample dataset file containing over 1,000 company reviews
+
+
