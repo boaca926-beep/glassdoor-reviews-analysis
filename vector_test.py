@@ -11,7 +11,9 @@ except Exception as e:
 
 print("\nStep 2: Invoking retriever...")
 try:
-    results = retriever.invoke("Show Google reviews")
+    results = retriever.invoke(
+        "work life balance company culture",
+        filter={"company": "Google"}) # Only specific company: Google
     print(f"✓ Got {len(results)} results")
 except Exception as e:
     print(f"✗ Query failed: {e}")
@@ -20,4 +22,12 @@ except Exception as e:
 print("Step 2: Printing results ...")
 for i, doc in enumerate(results, 1):
     print(f"\n--- Result {i} ---")
-    print(f"Content: {doc.page_content[:200]}...")
+    if hasattr(doc, 'metadata') and doc.metadata:
+        print(f"Company: {doc.metadata.get('company', 'N/A')}")
+        print(f"Rating: {doc.metadata.get('rating', 'N/A')}/5.0")
+        print(f"Date: {doc.metadata.get('date', 'N/A')}")
+    print(f"\nFull Review Text:")
+    print("-" * 40)
+    print(doc.page_content)  # Full content, not truncated
+    print("-" * 40)
+    #print(f"Content: {doc.page_content[:200]}...")
