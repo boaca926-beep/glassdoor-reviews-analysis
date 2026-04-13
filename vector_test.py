@@ -13,7 +13,7 @@ print("\nStep 2: Invoking retriever...")
 try:
     results = retriever.invoke(
         "work life balance company culture",
-        filter={"company": "Google"}) # Only specific company: Google
+        filter={"company": "Comsol"}) # Only specific company: Google
     print(f"✓ Got {len(results)} results")
 except Exception as e:
     print(f"✗ Query failed: {e}")
