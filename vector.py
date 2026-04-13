@@ -36,7 +36,7 @@ embeddings = OllamaEmbeddings(model="nomic-embed-text") # 8192 tokens, supports 
     Check if the database location is already exist in chrome,
     convert it into documents
 """
-db_location = "./chroma_langchain_db"
+db_location = "./database/chroma_langchain_db"
 if os.path.exists(db_location):
     print(f"Deleting existing database at {db_location}")
     shutil.rmtree(db_location)
