@@ -1,5 +1,5 @@
 """
-    Inspect csv file and convert it into json file
+    RAG Pipeline for CV/Resume PDFs
 """
 
 import pandas as pd

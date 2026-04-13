@@ -106,7 +106,7 @@ print(f"\nRetrieved {len(results['ids'])} documents")
 for i, (doc_id, metadata, doc) in enumerate(zip(results['ids'], results['metadatas'], results['documents'])):
     print(f"\nDocument {i+1}:")
     print(f"    ID: {doc_id}")
-    print(f"    Content: {doc[:100]}..." if len(doc) > 100 else f" Content: {doc}")
+    print(f"    Content: {doc[:500]}..." if len(doc) > 100 else f" Content: {doc}")
     print(f"    Metadata: {metadata}")
 
 # Query by metada
@@ -121,6 +121,7 @@ if len(google_docs['ids']) > 0:
     print("\nSample Google document:")
     for i in range(min(3, len(google_docs['ids']))):
         print(f"    ID: {google_docs['ids'][i]}")
-        print(f"    ID: {google_docs['documents'][i][:100]}...")
-        print(f"    Content: {google_docs['metadatas'][i]}")
+        print(f"    Content: {google_docs['documents'][i][:500]}...")
+        print(f"    Metadata: {google_docs['metadatas'][i]}")
         print()
+
