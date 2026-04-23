@@ -1,0 +1,52 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  # Your RAG application
+  app:
+    build: .
+    container_name: glassdoor-rag-app
+    volumes:
+      # Mount your code for development (hot reload)
+      - .:/app
+      # Persistent data storage
+      - ./chroma_db:/app/chroma_db
+      - ./data:/app/data
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+      - PYTHONPATH=/app
+    depends_on:
+      - ollama
+    stdin_open: true
+    tty: true
+    # Keep running and allow interactive input
+    command: python main.py
+    networks:
+      - rag-network
+
+  # Ollama service with your models
+  ollama:
+    image: ollama/ollama:latest
+    container_name: glassdoor-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama  # Persists downloaded models
+    environment:
+      - OLLAMA_KEEP_ALIVE=24h
+    # Optional: Use GPU if available
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    networks:
+      - rag-network
+
+networks:
+  rag-network:
+    driver: bridge
+
+volumes:
+  ollama_data:
+    driver: local

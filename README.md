@@ -4,7 +4,7 @@
 This project analyzes Glassdoor employee review data from the Bright Data sample dataset.
 
 ## Data Source
-- **Provider**: Fetch free smaple dataset of Glassdoor from Bright Data
+- **Provider**: Fetch free sample dataset of Glassdoor from Bright Data
 
 - **File**: 'glassdoor-companies-reviews.csv'
 
@@ -16,8 +16,8 @@ Step 1: Navigate to the GitHub Repository
 
     Go to: https://github.com/luminati-io/Glassdoor-dataset-samples
 
-    This is the official repository for Bright Data's free dataset samples 
-    
+    This is the official repository for Bright Data's free dataset samples
+
 Step 2: Locate the Dataset File
 
     On the repository page, you'll see a file listing. Look for: glassdoor-companies-reviews.csv
@@ -48,7 +48,7 @@ This is the sample dataset file containing over 1,000 company reviews
 git clone https://github.com/luminati-io/Glassdoor-dataset-samples.git
 
 # Install dependencies
-A text file: requiremnts.txt inludes all dependiceis. To download the dependencies
+A text file: requiremnts.txt includes all dependiceis. To download the dependencies
 uv add -r requirements.txt
 ```
 
@@ -104,4 +104,52 @@ The CSV file contains the following fields:
 | `flags_ceo_approval` | Whether employee approves of CEO | Text |
 | `flags_recommend_frend` | Whether employee would recommend to friend | Text |
 | `employee_location` | Employee's location | Text |
-| `employee_job_title` | Employee's job title | Text |k
+| `employee_job_title` | Employee's job title | Text |
+
+## Docker Deployment
+### 1. Install Python and uv
+```bash
+# Download Docker Desktop from:
+# https://www.docker.com/products/docker-desktop/
+```
+
+### 2. Import the code
+```bash
+# Clone your repository
+git clone https://github.com/boaca926-beep/job-agent.git
+cd job-agent
+```
+
+## 🚀 Deployment
+
+### Option 1: Local Python (Recommended)
+```bash
+# 1. Setup Python environment
+./setup.sh
+
+# 2. Install Ollama from https://ollama.com
+
+# 3. Pull the LLM model
+ollama pull llama3.2
+
+# 4. Run the app
+./run.sh
+```
+
+### Option 2: Docker
+```bash
+# 1. Install Docker Desktop
+
+# 2. Deploy with Docker
+./deploy.sh
+
+# 3. Run the app inside container
+docker-compose exec app python main.py
+```
+
+### Option 3: Quick Start
+```bash
+# Setup and run in one go
+uv sync && ollama pull llama3.2 && uv run python main.py
+```
+
